@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gabarito exemplo 1</title>
+  <style>
+    .tamanho-div {
+      width: 60%;
+      margin: auto;
+    }
+
+    .minha-div {
+      margin-top: 120px;
+    }
+
+    .centraliza {
+      text-align: center;
+    }
+
+    .vermelho {
+      color: #f00;
+    }
+
+    .verde {
+      color: #0f0;
+    }
+
+    .azul {
+      color: #00f;
+      text-transform: uppercase;
+    }
+
+    .violeta {
+      color: #c2f;
+    }
+
+    .preto {
+      color: #000;
+    }
+
+    .grande {
+      font-size: 3em;
+      color: #fa5;
+    }
+  </style>
+</head>
+<body>
+  <div class="tamanho-div">
+    <div>
+      <h1 class="centraliza">Esta é a minha página</h1>
+    </div>
+    <div class="instruções">
+      <ul>
+        <li>Crie uma lista qualquer com pelo menos 10 itens</li>
+        <li>Crie de forma que cada item tenha uma estilização aleatória</li>
+        <li>Altere o texto do quarto item para 'Olá eu fui alterado'</li>
+        <li>Remova o oitavo item da lista, mas antes faça o texto do item aparecer no console</li>
+        <li>Dica: utilize as classes já criadas no exercício</li>
+      </ul>
+    </div>
+    <div class="minha-div">
+      <h2>Resolva seu exercício aqui</h2>
+      <ul id="minha-lista"></ul>
+    </div>
+  </div>
+  <script>
+    const lista = document.getElementById('minha-lista');
+
+    for (let index = 1; index <= 10; index += 1) {
+      const classes = ['vermelho', 'verde', 'azul', 'violeta', 'preto', 'grande'];
+      const randomNumber = Math.floor(Math.random() * classes.length);
+      const elemento = document.createElement('li');
+      elemento.innerText = `Meu item ${index}`;
+      elemento.classList.add(classes[randomNumber]);
+      lista.appendChild(elemento);
+    }
+
+    lista.childNodes[3].innerText = 'Olá eu fui alterado';
+    console.log(lista.childNodes[7].innerText);
+    lista.removeChild(lista.childNodes[7]);
+
+  </script>
+</body>
+</html>

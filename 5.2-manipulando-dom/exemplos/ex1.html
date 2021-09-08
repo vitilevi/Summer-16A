@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exemplo 1</title>
+  <style>
+    .tamanho-div {
+      width: 60%;
+      margin: auto;
+    }
+
+    .minha-div {
+      margin-top: 120px;
+    }
+
+    .centraliza {
+      text-align: center;
+    }
+
+    .vermelho {
+      color: #f00;
+    }
+
+    .verde {
+      color: #0f0;
+    }
+
+    .azul {
+      color: #00f;
+      text-transform: uppercase;
+    }
+
+    .violeta {
+      color: #c2f;
+    }
+
+    .preto {
+      color: #000;
+    }
+
+    .grande {
+      font-size: 3em;
+      color: #fa5;
+    }
+  </style>
+</head>
+<body>
+  <div class="tamanho-div">
+    <div>
+      <h1 class="centraliza">Manipulação de DOM</h1>
+    </div>
+    <div class="instruções">
+      <ul>
+        <li>Crie uma lista qualquer com pelo menos 10 itens</li>
+        <li>Crie de forma que cada item tenha uma estilização aleatória</li>
+        <li>Altere o texto do quarto item para 'Olá eu fui alterado'</li>
+        <li>Remova o oitavo item da lista, mas antes faça o texto do item aparecer no console</li>
+        <li>Dica: utilize as classes já criadas no exercício</li>
+      </ul>
+    </div>
+    <div class="minha-div">
+      <h2>Resolva seu exercício aqui</h2>
+      <ul id="minha-lista"></ul>
+    </div>
+  </div>
+  <script>
+    const minhaLista = document.querySelector('#minha-lista');
+    const classes = ['vermelho', 'verde', 'azul', 'violeta', 'preto', 'grande'];
+
+    for (let i = 0; i < 10; i += 1) {
+      const items = `Meu índice ${i + 1}`;
+      const li = document.createElement('li');
+      const randomNumber = Math.floor(Math.random() * classes.length);
+      li.innerHTML = items;
+      li.classList.add(classes[randomNumber]);
+      minhaLista.appendChild(li);
+    }
+
+    const elementList = document.querySelectorAll('#minha-lista li');
+    elementList[3].innerHTML = 'Olá eu fui alterado';
+
+    console.log(elementList[7].innerHTML);
+    minhaLista.removeChild(elementList[7]);
+
+  </script>
+</body>
+</html>

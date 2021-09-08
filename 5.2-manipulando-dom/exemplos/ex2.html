@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exemplo 2</title>
+  <style>
+    .tamanho-div {
+      width: 60%;
+      margin: auto;
+    }
+
+    .minha-div {
+      margin-top: 120px;
+    }
+
+    .centraliza {
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="tamanho-div">
+    <div>
+      <h1 class="centraliza">Esta é a minha página de habilidades</h1>
+    </div>
+    <div class="instruções">
+      <ul>
+        <li>Crie uma lista com habilidades que voce irá aprender na Trybe</li>
+        <li>Caso a habilidade tenha mais que 6 caracteres, inverta ela</li>
+        <li>Se sua lista conter a habilidade React, troque sua cor para ' #11E '</li>
+      </ul>
+    </div>
+    <div class="minha-div">
+      <h2>Resolva seu exercício aqui</h2>
+      <ul id="lista-de-habilidades"></ul>
+    </div>
+  </div>
+  <script>
+    const skillList = document.querySelector('#lista-de-habilidades');
+
+    const skills = ['HTML', 'CSS', 'JavaScript', 'DOM', 'React', 'Redux', 'Git', 'GitHub', 'Testes unitários', 'Reacts'];
+
+    function createElement(skill) {
+      const element = document.createElement('li');
+      element.innerHTML = skill;
+      skillList.appendChild(element);
+      return element;
+    }
+
+    for (let index = 0; index < skills.length; index += 1) {
+      if (skills[index].length > 6) {
+        const reverseString = skills[index].split('').reverse().join('');
+        createElement(reverseString);
+      } else if (skills[index] === 'React') {
+        const element = createElement(skills[index]).style.color = '#11E';
+      } else {
+        createElement(skills[index]);
+      }
+    }
+  </script>
+</body>
+</html>
