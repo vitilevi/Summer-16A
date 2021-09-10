@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exemplo 1</title>
+  <style>
+    .form {
+      margin-top: 10px;
+    }
+
+    .form-btn {
+      margin-bottom: 30px;
+    }
+
+    .div-total {
+      margin-bottom: 100px;
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <h1>Bem vindo a minha lan house!</h1>
+  </div>
+  <div class="form">
+    <span>Insira seu nome aqui</span>
+    <input id="nome" type="text">
+  </div>
+  <div class="form">
+    <span>Quantas horas você utilizou?</span>
+    <input id="horas" type="text">
+  </div>
+  <div class="form form-btn">
+    <button id="calcular">Calcular</button>
+  </div>
+  <div class="div-total">
+    <h2>Você deve pagar:</h2>
+  </div>
+  <div>
+    <p>Tabela de valores</p>
+    <ul>
+      <li>
+        1 hora: 4 reais.
+      </li>
+      <li>
+        2 horas: 7.50 reais.
+      </li>
+      <li>
+        A cada hora excedente de 2 horas acrescente 3 reais.
+      </li>
+    </ul>
+  </div>
+  <div>
+    <h1>Requisitos</h1>
+    <ul>
+      <li>Calcule o total a ser pago</li>
+      <li>Retorne uma mensagem no template `Nome, você deve pagar TOTAL reais.</li>
+    </ul>
+  </div>
+  
+  <script>
+    const botaoCalcular = document.querySelector('#calcular');
+
+    function calculaHoras(horas) {
+      if (horas == 1) return 4;
+      if (horas == 2) return 7.50;
+      if (horas > 2) {
+        const horasExcedentes = horas - 2;
+        return 7.50 + (horasExcedentes * 3);
+      }
+    }
+    
+    function calculateTotal(event) {
+      const nome = document.querySelector('#nome').value;
+      const horas = document.querySelector('#horas').value;
+      const divTotal = document.querySelector('.div-total');
+  
+      const totalASerPago = calculaHoras(horas);
+
+      const message = `${nome}, você deve pagar ${totalASerPago} reais.`;
+      const element = document.createElement('p');
+      element.innerHTML = message;
+      divTotal.appendChild(element);
+    }
+
+    botaoCalcular.addEventListener('click', calculateTotal)
+  </script>
+</body>
+</html>
