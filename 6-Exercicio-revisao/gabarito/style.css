@@ -4,7 +4,12 @@
 }
 
 body {
-  background-color: #33dd9933
+  background-color: #33dd9933;
+  
+}
+
+h1, h2 {
+  font-family: 'Ubuntu';
 }
 
 .page-wrapper {
@@ -53,6 +58,7 @@ body {
 .my-article p {
   margin-right: 15px;
   text-align: justify;
+  line-height: 1.3em;
 }
 
 .img-article {
@@ -71,6 +77,8 @@ body {
 
 .aside p {
   padding: 30px;
+  line-height: 1.3em;
+  text-align: justify;
 }
 
 .rodape {
