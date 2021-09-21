@@ -33,9 +33,22 @@ h1, h2 {
   width: 100px;
 }
 
-.form-nome {
-  margin-top: 10px;
-  text-align: center;
+.form-cabecalho {
+  display: flex;
+}
+
+.form-input {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-name-imput {
+  margin-bottom: 5px;
+}
+
+.form-btn {
+  margin-left: 10px;
+  display: flex;
 }
 
 .main-wrapper {

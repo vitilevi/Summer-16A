@@ -2,11 +2,15 @@ const span = document.querySelector('#nome');
 const okBtn = document.querySelector('#form-ok');
 
 okBtn.addEventListener('click', function() {
-  const formInput = document.querySelector('#nome-input');
-  if(formInput.value.length < 3) {
-    alert('Insira um nome válido!');
+  const nomeInput = document.querySelector('#nome-input');
+  const passwordInput = document.querySelector('#password-input')
+  if(nomeInput.value === "teste" && passwordInput.value === "123456") {
+    alert('Olá pessoa, seja bem-vinda');
+    nomeInput.value = "";
+    passwordInput.value = "";
   } else {
-    span.innerHTML = `Olá, ${formInput.value}`;
-    formInput.value = "";
+    alert('Senha ou usuário errados');
+    nomeInput.value = "";
+    passwordInput.value = "";
   }
 });
