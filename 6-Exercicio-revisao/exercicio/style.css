@@ -6,3 +6,130 @@
 h1, h2 {
   font-family: 'Ubuntu';
 }
+
+.header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 15px;
+}
+
+.page-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.header-logo {
+  width: 100px;
+}
+
+.form-header {
+  display: flex;
+}
+
+#name-input {
+  margin-bottom: 5px;
+}
+
+.login-input {
+  padding: 3px;
+}
+
+.form-input {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-btn {
+  display: flex;
+  margin-left: 10px;
+}
+
+#form-entrar {
+  padding: 0 5px;
+}
+
+.main-wrapper {
+  display: none;
+  margin-bottom: auto;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+}
+
+.content h1 {
+  text-align: center;
+}
+
+.my-article {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.my-article p {
+  text-align: justify;
+  margin-right: 20px;
+}
+
+.article-img {
+  width: 200px;
+}
+
+.aside {
+  width: 20%;
+  margin: 0 10px;
+}
+
+.aside p {
+  text-align: justify;
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  height: 100px;
+  justify-content: flex-end;
+  align-items: flex-end;
+  padding: 40px;
+}
+
+@media screen and (max-width: 800px) {
+  .header {
+    flex-direction: column;
+  }
+
+  .main-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .content {
+    width: 90%;
+  }
+
+  .my-article {
+    margin: 20px 0;
+  }
+
+  .content figure {
+    text-align: center;
+  }
+  
+  .article-img {
+    width: 70%;
+    margin-top: 20px;
+  }
+
+  .aside {
+    width: 90%;
+  }
+
+  .my-article {
+    flex-direction: column;
+  }
+}

@@ -10,13 +10,58 @@
 <body>
   <div class="page-wrapper">
     <header class="header">
-
+      <div class="header-logo-wrapper">
+        <figure>
+          <img class="header-logo" src="./images/logo.png" alt="Logo da pagina">
+        </figure>
+      </div>
+      <div class="header-name">
+        <h1>Trybe</h1>
+      </div>
+      <div class="form-header">
+        <div class="form-input">
+          <input id="name-input" class="login-input" type="text" placeholder="Insira seu nome" required>
+          <input id="password-input" class="login-input" type="password" placeholder="Senha" required>
+        </div>
+        <div class="form-btn">
+          <button id="form-entrar">Entrar</button>
+        </div>
+      </div>
     </header>
     <div class="main-wrapper">
-
+      <main class="content">
+        <h1>Minhas noticias</h1>
+        <section class="articles">
+          <article class="my-article">
+            <p>
+              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum
+            </p>
+            <figure>
+              <img class="article-img" src="./images/noticia-1.jpg" alt="Imagem da primeira noticia">
+              <figcaption>Internet, 2021</figcaption>
+            </figure>
+          </article>
+          <article class="my-article">
+            <p>
+              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum
+            </p>
+            <figure>
+              <img class="article-img" src="./images/noticia-2.png" alt="Imagem da segunda noticia">
+              <figcaption>Internet, 2021</figcaption>
+            </figure>
+          </article>
+        </section>
+      </main>
+      <aside class="aside">
+        <h2>Meu campo lateral</h2>
+        <p>
+          Mussum Ipsum, cacilds vidis litro abertis. Mais vale um bebadis conhecidiss, que um alcoolatra anonimis. Praesent vel viverra nisi. Mauris aliquet nunc non turpis scelerisque, eget. Detraxit consequat et quo num tendi nada. Mé faiz elementum girarzis, nisi eros vermeio
+        </p>
+      </aside>
     </div>
     <footer class="footer">
-
+      <h2>Construído por turma 16</h2>
+      <p id="data"></p>
     </footer>
   </div>
   <script src="./script.js"></script>
