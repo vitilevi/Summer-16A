@@ -1,0 +1,167 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+
+  <title>Popup Validation</title>
+  <meta name="description" content="Popup Validation Example">
+  <meta name="author" content="AntonLapshin">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+  <link href="validation.min.css" rel="stylesheet">
+  <script async defer src="//buttons.github.io/buttons.js"></script>
+
+  <style>
+    body {
+      text-align: center;
+      padding: 1em;
+      font-family: 'Lato', sans-serif;
+      background-color: #fafafa;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    label {
+      margin-right: 1em;
+      line-height: 1.5;
+    }
+
+    input:not([type="checkbox"]):not([type="radio"]),
+    select:not([type="checkbox"]):not([type="radio"]) {
+      height: 30px;
+      width: 100%;
+      border: 1px solid #bbb;
+    }
+
+    textarea {
+      width: 100%;
+      height: 60px;
+      border: 1px solid #bbb;
+    }
+
+    form {
+      text-align: left;
+      box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+      background-color: white;
+      padding: 1em;
+      max-width: 700px;
+      min-width: 300px;
+      display: inline-block;
+    }
+
+    form>div {
+      padding: 1em;
+    }
+
+    .form-control {
+      border-radius: 0;
+    }
+
+    button {
+      margin: 1em;
+    }
+
+    #customClassValidation, #manualValidation {
+      height: 30px;
+      width: 100%;
+      border: 1px solid #bbb;
+      background-color: white;
+    }    
+  </style>
+
+</head>
+
+<body>
+  <p>Pure JavaScript popup validation. Read <a href="https://github.com/AntonLapshin/popup-validation#popup-validation">docs</a></p>
+  <!-- Place this tag where you want the button to render. -->
+  <a class="github-button" href="https://github.com/AntonLapshin/popup-validation" data-icon="octicon-star" data-show-count="true" aria-label="Star AntonLapshin/popup-validation on GitHub">Star</a>
+
+  <h2>
+    Popup Validation Example
+  </h2>
+
+  <form class="form-panel">
+    <div>
+      <label for="title">Title:</label>
+      <select autofocus class="validate form-control" data-validate="required">
+      <option selected></option>
+      <option>Mr.</option>
+      <option>Mrs.</option>
+      <option>Ms.</option>
+      <option>Dr.</option>
+    </select>
+    </div>
+    <div>
+      <label for="fullName">Name:</label>
+      <input id="fullName" class="validate form-control" data-validate="required" />
+    </div>
+    <div>
+      <label>Gender:</label>
+      <label for="genderM">Male:</label>
+      <input type="radio" name="gender" id="genderM" class="validate form-control" data-validate="required" />
+      <label for="genderF">Female:</label>
+      <input type="radio" name="gender" id="genderF" class="validate form-control" data-validate="required" />
+    </div>
+    <div>
+      <label for="appointment">Appointment Date:</label>
+      <input type="date" id="appointment" class="validate form-control" data-validate="required" />
+    </div>
+    <div>
+      <label for="telephone">Phone Number:</label>
+      <input type="text" id="telephone" class="validate form-control" data-validate="required" />
+    </div>
+    <div>
+      <label for="email">Email:</label>
+      <input type="text" id="email" class="validate form-control" data-validate="required,emails" />
+    </div>
+    <div>
+      <label for="comments">Comments:</label>
+      <textarea id="comments" class="validate form-control" data-validate="required"></textarea>
+    </div>
+    <div>
+      <label>Custom Class Validation:</label>
+      <div id="customClassValidation" class="form-control">Click to toggle custom class validation</div>
+    </div>
+    <div>
+      <label for="agree">Agree to Some Terms:</label>
+      <input type="checkbox" id="agree" class="validate form-control" data-validate="required" />
+    </div>
+    <div>
+      <label>Manual Custom Popup:</label>
+      <div id="manualValidation" class="form-control validate-class">Click to manually show a popup</div>
+    </div>    
+    <button id="submitButton" type="submit">Submit</button>
+  </form>
+
+  <script src="validation.min.js"></script>
+  <script>
+    validation.init("form");
+
+    //
+    // Custom Class Validation Example
+    //
+    var enabled = false;
+    validation.addClassValidation("#customClassValidation", ".my-class-invalid", "Field is invalid");
+    document.getElementById("customClassValidation").addEventListener("click", function(e){
+      if (enabled){
+        e.target.className = e.target.className.replace(/my-class-invalid$/, "");
+      } else {
+        e.target.className += " my-class-invalid";
+      }
+      enabled = !enabled;
+    });
+
+    //
+    // Manual Validation Example
+    //
+    document.getElementById("manualValidation").addEventListener("click", function(e) {
+      validation.show("#manualValidation", "My custom message");
+    });
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,1 @@
+const factorial = require('../src/gex1');
