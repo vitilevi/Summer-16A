@@ -1,0 +1,13 @@
+.App {
+  text-align: center;
+}
+
+.pokemons {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.pokemon {
+  border: 1px solid black;
+  margin: 10px;
+}
